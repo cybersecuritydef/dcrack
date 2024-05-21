@@ -8,7 +8,6 @@ def help():
     
 def digest_auth_crack(info):
     password = None
-    if
     with open(info["wordlist"], "r", encoding='utf-8') as f:        
         for line in f:
             ha1 = hashlib.md5('{}:{}:{}'.format(info["username"], info["realm"], line.strip()).encode())        
