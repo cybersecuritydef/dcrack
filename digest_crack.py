@@ -4,7 +4,7 @@ import hashlib
 
 def help():
     print("EXAMPLES: ")
-    print("digest_crack.py --wordlist=words.txt --username=admin --realm='Private Area' --nonce=1445149415 --url=/ --nc=00000001 --cnonce=69dd5dd24dd85752 --qop=auth --method=GET --response=a33f9b9239f1c8bf427f9a66db2a9e90")
+    print("digest_crack.py --wordlist=words.txt --username=admin --realm=\"Private Area\" --nonce=1445149415 --url=/ --nc=00000001 --cnonce=69dd5dd24dd85752 --qop=auth --method=GET --response=a33f9b9239f1c8bf427f9a66db2a9e90")
 
     
 def digest_auth_crack(info):
