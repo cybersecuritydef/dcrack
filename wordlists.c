@@ -51,6 +51,7 @@ struct wordlists *read_wordlists(const char *filename){
                     buf[strlen(buf) - 1] = '\0';
                 add_words(words, buf);
             }
+            fclose(file);
             return words;
         }
         else{
