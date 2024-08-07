@@ -43,7 +43,7 @@ void help(void){
     printf("digest_crack --wordlist=words.txt --username=admin --realm=\"Private Area\" --nonce=1447149417 --url=/ --nc=00000001 --cnonce=69dd8dd24dd85752 --qop=auth --method=GET --response=a36f9b9239f1c8bf427f9a66db2a9e90");
 }
 
-int brute_force(struct options *opts, struct wordlists *word){
+int crack(struct options *opts, struct wordlists *word){
     char h1[LEN_HASH + 1] = {'\0'};
     char h2[LEN_HASH + 1] = {'\0'};
     char h3[LEN_HASH + 1] = {'\0'};
@@ -155,7 +155,7 @@ int main(int argc, char **argv){
             printf("[+] Wordlist: %s\n[+] words: %ld\n\n", opts.filename, words->count);
             sleep(1);
             printf("[!] Start crack...\n\n");
-            brute_force(&opts, words);
+            crack(&opts, words);
             free_wordlists(words);
         }
         else
