@@ -35,7 +35,7 @@ static void add_words(struct wordlists *words, const char *word){
         }*/
     }
     else
-        die("[-] Malloc");
+        die("[-] malloc");
 }
 
 struct wordlists *read_wordlists(const char *filename){
