@@ -6,10 +6,10 @@
 #include "common.h"
 
 
-void md5(const void *inbuf, const size_t inlen, void *outbuf){
+void md5(const char *inbuf, const size_t inlen, char *outbuf){
     MD5_CTX ctx_md5;
     unsigned char hash[MD5_DIGEST_LENGTH] = {'\0'};
-    if(inbuf && outbuf){
+    if(inbuf && outbuf && inlen > 0){
         MD5_Init(&ctx_md5);
         MD5_Update(&ctx_md5, inbuf, inlen);
         MD5_Final(hash, &ctx_md5);
