@@ -29,12 +29,12 @@ struct options{
 void help(void){
     printf("OPTIONS:\n\t");
     printf("--username=\tuser login\n\t");
-    printf("--realm=\n\t");
-    printf("--nonce=\n\t");
-    printf("--url=\n\t");
-    printf("--nc=\n\t");
-    printf("--cnonce=\n\t");
-    printf("--qop=\n\t");
+    printf("--realm=\tvalue realm\n\t");
+    printf("--nonce=\tvalue nonce\n\t");
+    printf("--url=\turl path\n\t");
+    printf("--nc=\tvalue nc\n\t");
+    printf("--cnonce=\tvalue cnonce\n\t");
+    printf("--qop=\tvalue qop\n\t");
     printf("--method=\tmethod request\n\t");
     printf("--response=\thash password\n\t");
     printf("-v\t\tverbose\n\t");
