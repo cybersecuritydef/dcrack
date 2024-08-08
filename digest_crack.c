@@ -12,7 +12,7 @@
 #define LEN_HASH 32
 
 struct options{
-    char *filename;
+    char *wordlist;
     char *username;
     char *url;
     char *realm;
@@ -28,17 +28,17 @@ struct options{
 
 void help(void){
     printf("OPTIONS:\n\t");
-    printf("--username=\tuser login\n\t");
-    printf("--realm=\tvalue realm\n\t");
-    printf("--nonce=\tvalue nonce\n\t");
-    printf("--url=\t\turl path\n\t");
-    printf("--nc=\t\tvalue nc\n\t");
-    printf("--cnonce=\tvalue cnonce\n\t");
-    printf("--qop=\t\tvalue qop\n\t");
-    printf("--method=\tmethod request\n\t");
-    printf("--response=\thash password\n\t");
-    printf("-v\t\tverbose\n\t");
-    printf("-h\t\tUsing help\n\n");
+    printf("-U --username=\tuser login\n\t");
+    printf("-r --realm=\tvalue realm\n\t");
+    printf("-n --nonce=\tvalue nonce\n\t");
+    printf("-u --url=\t\turl path\n\t");
+    printf("-c --nc=\t\tvalue nc\n\t");
+    printf("-e --cnonce=\tvalue cnonce\n\t");
+    printf("-q --qop=\t\tvalue qop\n\t");
+    printf("-m --method=\tmethod request\n\t");
+    printf("-o --response=\thash password\n\t");
+    printf("-v --verbose\t\tverbose\n\t");
+    printf("-h --help\t\tUsing help\n\n");
     printf("EXAMPLES:\n\t");
     printf("digest_crack --wordlist=words.txt --username=admin --realm=\"Private Area\" --nonce=1447149417 --url=/ --nc=00000001 --cnonce=69dd8dd24dd85752 --qop=auth --method=GET --response=a36f9b9239f1c8bf427f9a66db2a9e90");
 }
@@ -93,6 +93,7 @@ int main(int argc, char **argv){
         {"method", 1, NULL, 'm'},
         {"response", 1, NULL, 'o'},
         {"help", 0, NULL, 'h'},
+        {"verbose", 0, NULL, 'v'},
         {NULL, 0, NULL, 0}
     };
     int opt = 0;
