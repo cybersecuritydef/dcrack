@@ -8,7 +8,6 @@
 
 static void add_words(struct wordlists *words, const char *word){
     struct lists *data = NULL;
-    struct lists *last = NULL;
     if((data = (struct lists*)malloc(sizeof(struct lists)))){
         data->word = strdup(word);
         words->count++;
