@@ -82,16 +82,17 @@ int main(int argc, char **argv){
     struct wordlists *words = NULL;
     struct options opts;
     struct option longopts[] = {
-        {"wordlist", 1, NULL, 0},
-        {"username", 1, NULL, 1},
-        {"realm", 1, NULL, 2},
-        {"nonce", 1, NULL, 3},
-        {"url", 1, NULL, 4},
-        {"nc", 1, NULL, 5},
-        {"cnonce", 1, NULL, 6},
-        {"qop", 1, NULL, 7},
-        {"method", 1, NULL, 8},
-        {"response", 1, NULL, 9},
+        {"wordlist", 1, NULL, 'w'},
+        {"username", 1, NULL, 'U'},
+        {"realm", 1, NULL, 'r'},
+        {"nonce", 1, NULL, 'n'},
+        {"url", 1, NULL, 'u'},
+        {"nc", 1, NULL, 'c'},
+        {"cnonce", 1, NULL, 'e'},
+        {"qop", 1, NULL, 'q'},
+        {"method", 1, NULL, 'm'},
+        {"response", 1, NULL, 'o'},
+        {"help", 0, NULL, 'h'},
         {NULL, 0, NULL, 0}
     };
     int opt = 0;
