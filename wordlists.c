@@ -23,14 +23,8 @@ static void add_words(struct wordlists *words, const char *word){
     if((data = (struct lists*)malloc(sizeof(struct lists)))){
         data->word = strdup(word);
         words->count++;
-        if(words->words == NULL){
-            data->next = words->words;
-            words->words = data;
-        }
-        else{
-            last = last_word(words->words);
-            last->next = data;
-        }
+        data->next = words->words;
+        words->words = data;
     }
     else
         die("[-] malloc");
