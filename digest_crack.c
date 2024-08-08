@@ -100,36 +100,36 @@ int main(int argc, char **argv){
     int index_opt = 0;
     opterr = false;
     opts.verbose = false;
-    while((opt = getopt_long(argc, argv, "hv", longopts, &index_opt)) != EOF){
+    while((opt = getopt_long(argc, argv, "w:U:r:n:u:c:e:q:m:o:hv", longopts, &index_opt)) != EOF){
         switch(opt){
-            case 0:
-                opts.filename = optarg;
+            case 'w':
+                opts.wordlist = optarg;
                 break;
-            case 1 :
+            case 'U' :
                 opts.username = optarg;
                 break;
-            case 2 :
+            case 'r' :
                 opts.realm = optarg;
                 break;
-            case 3 :
+            case 'n' :
                 opts.nonce = optarg;
                 break;
-            case 4 :
+            case 'u' :
                 opts.url = optarg;
                 break;
-            case 5 :
+            case 'c' :
                 opts.nc = optarg;
                 break;
-            case 6 :
+            case 'e' :
                 opts.cnonce = optarg;
                 break;
-            case 7 :
+            case 'q' :
                 opts.qop = optarg;
                 break;
-            case 8 :
+            case 'm' :
                 opts.method = optarg;
                 break;
-            case 9 :
+            case 'o' :
                 opts.response = optarg;
                 break;
             case 'h' :
