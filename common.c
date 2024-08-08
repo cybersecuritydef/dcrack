@@ -4,6 +4,6 @@
 
 
 void die(const char *msg){
-    perror(msg);
+    fprintf(stderr, "%s\n", msg);
     exit(EOF);
 }

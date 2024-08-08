@@ -15,7 +15,7 @@ static void add_words(struct wordlists *words, const char *word){
         words->words = data;
     }
     else
-        die("[-] malloc");
+        die("[-] Error allocation memory!");
 }
 
 struct wordlists *read_wordlists(const char *filename){
@@ -36,7 +36,7 @@ struct wordlists *read_wordlists(const char *filename){
         }
         else{
             fclose(file);
-            die("[-] malloc");
+            die("[-] Error allocation memory!");
         }
     }
     return NULL;

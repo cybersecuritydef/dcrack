@@ -31,10 +31,10 @@ void help(void){
     printf("--username=\tuser login\n\t");
     printf("--realm=\tvalue realm\n\t");
     printf("--nonce=\tvalue nonce\n\t");
-    printf("--url=\turl path\n\t");
-    printf("--nc=\tvalue nc\n\t");
+    printf("--url=\t\turl path\n\t");
+    printf("--nc=\t\tvalue nc\n\t");
     printf("--cnonce=\tvalue cnonce\n\t");
-    printf("--qop=\tvalue qop\n\t");
+    printf("--qop=\t\tvalue qop\n\t");
     printf("--method=\tmethod request\n\t");
     printf("--response=\thash password\n\t");
     printf("-v\t\tverbose\n\t");
@@ -65,14 +65,14 @@ int crack(struct options *opts, struct wordlists *word){
             md5(payload, strlen(payload), h3);
             free(payload);
             if(strcmp(opts->response, h3) == 0){
-                printf("[+] Found: %s\n", ls->word);
+                printf("[+] Found: %s\n\n", ls->word);
                 return 0;
             }
             else if(opts->verbose)
                 printf("%s\n", ls->word);
         }
         else
-            die("[-] malloc");
+            die("[-] Error allocation memory!");
         ls = ls->next;
     }
     return EOF;
@@ -94,7 +94,6 @@ int main(int argc, char **argv){
         {"response", 1, NULL, 9},
         {NULL, 0, NULL, 0}
     };
-
     int opt = 0;
     int index_opt = 0;
     opterr = false;
@@ -159,7 +158,8 @@ int main(int argc, char **argv){
             free_wordlists(words);
         }
         else
-            die(opts.filename);
+            die("[-] File not found!");
+        printf("[!] Finish crack...\n");
     }
     return 0;
 }
