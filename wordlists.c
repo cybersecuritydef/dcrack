@@ -36,7 +36,7 @@ struct wordlists *read_wordlists(const char *filename){
         }
         else{
             fclose(file);
-            die("[-] Malloc");
+            die("[-] malloc");
         }
     }
     return NULL;
