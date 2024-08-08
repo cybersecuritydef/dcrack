@@ -152,8 +152,8 @@ int main(int argc, char **argv){
         printf("response:...%s\n\n", opts.response);
 
         printf("[!] Generating wordlists...\n\n");
-        if((words = read_wordlists(opts.filename))){
-            printf("[+] Wordlist: %s\n[+] words: %ld\n\n", opts.filename, words->count);
+        if((words = read_wordlists(opts.wordlist))){
+            printf("[+] Wordlist: %s\n[+] words: %ld\n\n", opts.wordlist, words->count);
             sleep(1);
             printf("[!] Start crack...\n\n");
             crack(&opts, words);
