@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <openssl/md5.h>
 
 #include "common.h"
+#include "md5.h"
 
 
 void md5(const char *inbuf, const size_t inlen, char *outbuf){
