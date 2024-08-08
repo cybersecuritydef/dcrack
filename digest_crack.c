@@ -28,6 +28,7 @@ struct options{
 
 void help(void){
     printf("OPTIONS:\n\t");
+    printif("-w --wordlist=\tpath wordlist\n\t");
     printf("-U --username=\tuser login\n\t");
     printf("-r --realm=\tvalue realm\n\t");
     printf("-n --nonce=\tvalue nonce\n\t");
