@@ -6,17 +6,6 @@
 #include "common.h"
 
 
-static struct lists *last_word(struct lists *ls){
-    struct lists *last = ls;
-    if(last){
-        while(last->next){
-            last = last->next;
-        }
-        return last;
-    }
-    return NULL;
-}
-
 static void add_words(struct wordlists *words, const char *word){
     struct lists *data = NULL;
     struct lists *last = NULL;
