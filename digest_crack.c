@@ -41,7 +41,7 @@ void help(void){
     printf("-v\t--verbose\tverbose\n\t");
     printf("-h\t--help\t\tUsing help\n\n");
     printf("EXAMPLES:\n\t");
-    printf("digest_crack --wordlist=words.txt --username=admin --realm=\"Private Area\" --nonce=1447149417 --url=/ --nc=00000001 --cnonce=69dd8dd24dd85752 --qop=auth --method=GET --response=a36f9b9239f1c8bf427f9a66db2a9e90");
+    printf("dcrack --wordlist=words.txt --username=admin --realm=\"Private Area\" --nonce=1447149417 --url=/ --nc=00000001 --cnonce=69dd8dd24dd85752 --qop=auth --method=GET --response=a36f9b9239f1c8bf427f9a66db2a9e90");
 }
 
 int crack(struct options *opts, struct wordlists *word){
