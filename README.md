@@ -1,1 +1,1 @@
-Brute force digest auth
+Brute force digest MD5 auth
