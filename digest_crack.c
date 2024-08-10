@@ -28,18 +28,18 @@ struct options{
 
 void help(void){
     printf("OPTIONS:\n\t");
-    printif("-w --wordlist=\tpath wordlist\n\t");
-    printf("-U --username=\tuser login\n\t");
-    printf("-r --realm=\tvalue realm\n\t");
-    printf("-n --nonce=\tvalue nonce\n\t");
-    printf("-u --url=\t\turl path\n\t");
-    printf("-c --nc=\t\tvalue nc\n\t");
-    printf("-e --cnonce=\tvalue cnonce\n\t");
-    printf("-q --qop=\t\tvalue qop\n\t");
-    printf("-m --method=\tmethod request\n\t");
-    printf("-o --response=\thash password\n\t");
-    printf("-v --verbose\t\tverbose\n\t");
-    printf("-h --help\t\tUsing help\n\n");
+    printf("-w\t--wordlist=\tpath wordlist\n\t");
+    printf("-U\t--username=\tuser login\n\t");
+    printf("-r\t--realm=\tvalue realm\n\t");
+    printf("-n\t--nonce=\tvalue nonce\n\t");
+    printf("-u\t--url=\t\turl path\n\t");
+    printf("-c\t--nc=\t\tvalue nc\n\t");
+    printf("-e\t--cnonce=\tvalue cnonce\n\t");
+    printf("-q\t--qop=\t\tvalue qop\n\t");
+    printf("-m\t--method=\tmethod request\n\t");
+    printf("-o\t--response=\thash password\n\t");
+    printf("-v\t--verbose\tverbose\n\t");
+    printf("-h\t--help\t\tUsing help\n\n");
     printf("EXAMPLES:\n\t");
     printf("digest_crack --wordlist=words.txt --username=admin --realm=\"Private Area\" --nonce=1447149417 --url=/ --nc=00000001 --cnonce=69dd8dd24dd85752 --qop=auth --method=GET --response=a36f9b9239f1c8bf427f9a66db2a9e90");
 }
