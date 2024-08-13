@@ -97,11 +97,12 @@ int main(int argc, char **argv){
         {"verbose", 0, NULL, 'v'},
         {NULL, 0, NULL, 0}
     };
+    char shortopts[] = "w:U:r:n:u:c:e:q:m:o:hv";
     int opt = 0;
     int index_opt = 0;
     opterr = false;
     opts.verbose = false;
-    while((opt = getopt_long(argc, argv, "w:U:r:n:u:c:e:q:m:o:hv", longopts, &index_opt)) != EOF){
+    while((opt = getopt_long(argc, argv, shortopts, longopts, &index_opt)) != EOF){
         switch(opt){
             case 'w':
                 opts.wordlist = optarg;
