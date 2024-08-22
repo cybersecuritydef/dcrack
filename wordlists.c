@@ -22,7 +22,7 @@ struct wordlists *read_wordlists(const char *filename){
     struct wordlists *words = NULL;
     char buf[LEN] = {'\0'};
     FILE *file = NULL;
-    if((file = fopen(filename, "r"))){
+    if((file = fopen(filename, "r")) != NULL){
         if((words = (struct wordlists*)malloc(sizeof(struct wordlists))) != NULL){
             words->count = 0;
             words->words = NULL;
