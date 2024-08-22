@@ -27,9 +27,8 @@ struct wordlists *read_wordlists(const char *filename){
             words->count = 0;
             words->words = NULL;
             while(fgets(buf, sizeof(buf), file)){
-                if(buf[strlen(buf) - 1] == '\n')
-                    buf[strlen(buf) - 1] = '\0';
-                add_words(words, buf);
+              buf[strlen(buf) - 1] = '\0';
+              add_words(words, buf);
             }
             fclose(file);
             return words;
