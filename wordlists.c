@@ -8,7 +8,7 @@
 
 static void add_words(struct wordlists *words, const char *word){
     struct lists *data = NULL;
-    if((data = (struct lists*)malloc(sizeof(struct lists)))){
+    if((data = (struct lists*)malloc(sizeof(struct lists))) != NULL){
         data->word = strdup(word);
         words->count++;
         data->next = words->words;
@@ -23,10 +23,10 @@ struct wordlists *read_wordlists(const char *filename){
     char buf[LEN] = {'\0'};
     FILE *file = NULL;
     if((file = fopen(filename, "r"))){
-        if((words = (struct wordlists*)malloc(sizeof(struct wordlists)))){
+        if((words = (struct wordlists*)malloc(sizeof(struct wordlists))) != NULL){
             words->count = 0;
             words->words = NULL;
-            while(fgets(buf, sizeof(buf), file)){
+            while(fgets(buf, sizeof(buf), file) != NULL){
               buf[strlen(buf) - 1] = '\0';
               add_words(words, buf);
             }
