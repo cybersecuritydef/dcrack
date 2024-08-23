@@ -51,9 +51,9 @@ int crack(struct options *opts, struct wordlists *word){
     char *payload = NULL;
     size_t len = 0;
     struct lists *ls = word->words;
-    while(ls){
+    while(ls != NULL){
         len = strlen(opts->username) + strlen(opts->realm) + strlen(ls->word) + strlen(opts->method) + strlen(opts->url) + strlen(opts->nonce) + strlen(opts->nc) + strlen(opts->cnonce) + strlen(opts->qop) + 72;
-        if((payload = (char *)calloc(len + 1, sizeof(char)))){
+        if((payload = (char *)calloc(len + 1, sizeof(char))) != NULL){
             sprintf(payload, "%s:%s:%s", opts->username, opts->realm, ls->word);
             md5(payload, strlen(payload), h1);
             memset(payload, '\0', len);
