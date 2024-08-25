@@ -48,12 +48,16 @@ void free_wordlists(struct wordlists *words){
             tmp = words->words;
             words->words = words->words->next;
             free(tmp->word);
+            tmp->word = NULL;
+
             free(tmp);
             tmp = NULL;
         }
     }
 
     free(words->words->word);
+    words->words->word = NULL;
+
     free(words->words);
     words->words = NULL;
 
