@@ -47,6 +47,7 @@ void free_wordlists(struct wordlists *words){
         while(words->words->next != NULL){
             tmp = words->words;
             words->words = words->words->next;
+
             free(tmp->word);
             tmp->word = NULL;
 
