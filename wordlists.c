@@ -44,7 +44,7 @@ struct wordlists *read_wordlists(const char *filename){
 void free_wordlists(struct wordlists *words){
     struct lists *tmp = NULL;
     if(words != NULL){
-        while(words->words->next != NULL){
+        while(words->words != NULL){
             tmp = words->words;
             words->words = words->words->next;
 
@@ -54,14 +54,7 @@ void free_wordlists(struct wordlists *words){
             free(tmp);
             tmp = NULL;
         }
+        free(words);
+        words = NULL;
     }
-
-    free(words->words->word);
-    words->words->word = NULL;
-
-    free(words->words);
-    words->words = NULL;
-
-    free(words);
-    words = NULL;
 }
