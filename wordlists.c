@@ -22,13 +22,18 @@ struct wordlists *read_wordlists(const char *filename){
     struct wordlists *words = NULL;
     char buf[LEN] = {'\0'};
     FILE *file = NULL;
+    size_t len = 0;
     if((file = fopen(filename, "r")) != NULL){
         if((words = (struct wordlists*)malloc(sizeof(struct wordlists))) != NULL){
             words->count = 0;
             words->words = NULL;
             while(fgets(buf, sizeof(buf), file) != NULL){
-                buf[strlen(buf) - 1] = '\0';
-                add_words(words, buf);
+                len = strlen(buf);
+                if(len > 0){
+                    if(strcspn(buf, "\n") != len)
+                        buf[strlen(buf) - 1] = '\0';
+                    add_words(words, buf);
+                }                
             }
             fclose(file);
             return words;
